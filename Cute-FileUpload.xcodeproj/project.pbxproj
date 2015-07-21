@@ -12,12 +12,12 @@
 		648CC2BA1B5CF5BB0020D5F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 648CC2B91B5CF5BB0020D5F1 /* Images.xcassets */; };
 		648CC2BD1B5CF5BB0020D5F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648CC2BB1B5CF5BB0020D5F1 /* LaunchScreen.xib */; };
 		648CC2C91B5CF5BB0020D5F1 /* Cute_FileUploadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2C81B5CF5BB0020D5F1 /* Cute_FileUploadTests.m */; };
-		648CC2D71B5CF7940020D5F1 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 648CC2D61B5CF7940020D5F1 /* web */; };
 		648CC2DE1B5CF89D0020D5F1 /* CuteHttpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2DD1B5CF89D0020D5F1 /* CuteHttpServer.m */; };
 		648CC2E11B5CF8B40020D5F1 /* CuteHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2E01B5CF8B40020D5F1 /* CuteHttpClient.m */; };
 		648CC2E41B5CFBEF0020D5F1 /* ZWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2E31B5CFBEF0020D5F1 /* ZWBaseViewController.m */; };
 		648CC3211B5D009B0020D5F1 /* CuteHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC3201B5D009B0020D5F1 /* CuteHttpResponse.m */; };
 		648CC3241B5D136F0020D5F1 /* CuteHttpMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC3231B5D136F0020D5F1 /* CuteHttpMessage.m */; };
+		64A900471B5DD8AB003EC557 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 64A900461B5DD8AB003EC557 /* web */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		648CC2C21B5CF5BB0020D5F1 /* Cute-FileUploadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cute-FileUploadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		648CC2C71B5CF5BB0020D5F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		648CC2C81B5CF5BB0020D5F1 /* Cute_FileUploadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cute_FileUploadTests.m; sourceTree = "<group>"; };
-		648CC2D61B5CF7940020D5F1 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
 		648CC2DC1B5CF89D0020D5F1 /* CuteHttpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteHttpServer.h; sourceTree = "<group>"; };
 		648CC2DD1B5CF89D0020D5F1 /* CuteHttpServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteHttpServer.m; sourceTree = "<group>"; };
 		648CC2DF1B5CF8B40020D5F1 /* CuteHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteHttpClient.h; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		648CC3201B5D009B0020D5F1 /* CuteHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteHttpResponse.m; sourceTree = "<group>"; };
 		648CC3221B5D136F0020D5F1 /* CuteHttpMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteHttpMessage.h; sourceTree = "<group>"; };
 		648CC3231B5D136F0020D5F1 /* CuteHttpMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteHttpMessage.m; sourceTree = "<group>"; };
+		64A900461B5DD8AB003EC557 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 		648CC2D51B5CF7440020D5F1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				648CC2D61B5CF7940020D5F1 /* web */,
+				64A900461B5DD8AB003EC557 /* web */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				648CC2D71B5CF7940020D5F1 /* web in Resources */,
+				64A900471B5DD8AB003EC557 /* web in Resources */,
 				648CC2BD1B5CF5BB0020D5F1 /* LaunchScreen.xib in Resources */,
 				648CC2BA1B5CF5BB0020D5F1 /* Images.xcassets in Resources */,
 			);
