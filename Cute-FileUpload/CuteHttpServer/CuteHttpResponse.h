@@ -10,8 +10,6 @@
 
 @interface CuteHttpResponse : NSObject
 
-+ (NSData *)responseHttpMessageHeader;
-
 + (NSData *)responseHttpMessageBody;
 
 @end

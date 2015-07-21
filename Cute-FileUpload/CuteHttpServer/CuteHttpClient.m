@@ -7,7 +7,7 @@
 //
 
 #import "CuteHttpClient.h"
-
+#import "CuteHttpMessage.h"
 
 
 #define READ_BUFFER     2048
@@ -75,14 +75,30 @@
             //response data
             if (stream == self.outputStream) {
                 
-                NSString *responseString = @"HTTP/1.1 200 OK\nServer: ZWServer\nAccess-Control-Allow-Origin:*\nConnection: close\nContent-Length: 8\nContent-Type: text/html; charset=utf-8\n\nresponse";
+                //                NSString *responseString = @"HTTP/1.1 200 OK\nServer: ZWServer\nAccess-Control-Allow-Origin:*\nConnection: close\nContent-Length: 8\nContent-Type: text/html; charset=utf-8\n\nresponse";
                 
-                NSUInteger length = [self writeData:[responseString dataUsingEncoding:NSUTF8StringEncoding]];
+                NSString *filePath = [[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"web"] stringByDeletingLastPathComponent];
+                filePath = [filePath stringByAppendingString:@"/index.html"];
                 
-                if (responseString.length == length) {
-                    [self.outputStream close];
-                    [self.delegate zwClientHandleComplete:self];
-                }
+                NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
+                
+                NSInteger fileLength = (UInt64)[[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue];
+                
+                NSData *data = [NSData dataWithContentsOfFile:filePath];
+                
+                CuteHttpMessage *httpMessage = [[CuteHttpMessage alloc]init];
+                
+                [httpMessage appendHeaderField:@"Content-Length" headerValue:[NSString stringWithFormat:@"%ld",fileLength]];
+                
+                // wirite http header
+                [self writeData:[httpMessage httpHeaderMessageData]];
+                
+                // write http body
+                [self writeData:data];
+                //                if (6 == length) {
+                [self.outputStream close];
+                [self.delegate zwClientHandleComplete:self];
+                //                }
                 
             }
             

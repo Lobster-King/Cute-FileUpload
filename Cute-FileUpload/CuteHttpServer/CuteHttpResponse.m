@@ -7,12 +7,9 @@
 //
 
 #import "CuteHttpResponse.h"
+#import "CuteHttpMessage.h"
 
 @implementation CuteHttpResponse
-
-+ (NSData *)responseHttpMessageHeader{
-    return nil;
-}
 
 + (NSData *)responseHttpMessageBody{
     return nil;

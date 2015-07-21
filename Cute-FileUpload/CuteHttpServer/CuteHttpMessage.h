@@ -10,4 +10,17 @@
 
 @interface CuteHttpMessage : NSObject
 
+//- (id)initWithStatus:(NSInteger)status;
+//
+//- (BOOL)appendBodyData:(NSData *)data;
+//
+//- (NSData *)transferHttpData;
+//
+//- (NSData *)transferHttpBody;
+//
+//- (void)setHeaderField:(NSString *)headerField value:(NSString *)headerFieldValue;
+
+- (void)appendHeaderField:(NSString *)headerField headerValue:(NSString *)value;
+- (NSData *)httpHeaderMessageData;
+
 @end
