@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		648CC2AF1B5CF5BB0020D5F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2AE1B5CF5BB0020D5F1 /* main.m */; };
+		648CC2B21B5CF5BB0020D5F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2B11B5CF5BB0020D5F1 /* AppDelegate.m */; };
+		648CC2BA1B5CF5BB0020D5F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 648CC2B91B5CF5BB0020D5F1 /* Images.xcassets */; };
+		648CC2BD1B5CF5BB0020D5F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648CC2BB1B5CF5BB0020D5F1 /* LaunchScreen.xib */; };
+		648CC2C91B5CF5BB0020D5F1 /* Cute_FileUploadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2C81B5CF5BB0020D5F1 /* Cute_FileUploadTests.m */; };
+		648CC2D71B5CF7940020D5F1 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 648CC2D61B5CF7940020D5F1 /* web */; };
+		648CC2DE1B5CF89D0020D5F1 /* CuteHttpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2DD1B5CF89D0020D5F1 /* CuteHttpServer.m */; };
+		648CC2E11B5CF8B40020D5F1 /* CuteHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2E01B5CF8B40020D5F1 /* CuteHttpClient.m */; };
+		648CC2E41B5CFBEF0020D5F1 /* ZWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC2E31B5CFBEF0020D5F1 /* ZWBaseViewController.m */; };
+		648CC3211B5D009B0020D5F1 /* CuteHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC3201B5D009B0020D5F1 /* CuteHttpResponse.m */; };
+		648CC3241B5D136F0020D5F1 /* CuteHttpMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CC3231B5D136F0020D5F1 /* CuteHttpMessage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		648CC2C31B5CF5BB0020D5F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 648CC2A11B5CF5BB0020D5F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 648CC2A81B5CF5BB0020D5F1;
+			remoteInfo = "Cute-FileUpload";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		648CC2A91B5CF5BB0020D5F1 /* Cute-FileUpload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cute-FileUpload.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		648CC2AD1B5CF5BB0020D5F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		648CC2AE1B5CF5BB0020D5F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		648CC2B01B5CF5BB0020D5F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		648CC2B11B5CF5BB0020D5F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		648CC2B91B5CF5BB0020D5F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		648CC2BC1B5CF5BB0020D5F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		648CC2C21B5CF5BB0020D5F1 /* Cute-FileUploadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cute-FileUploadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		648CC2C71B5CF5BB0020D5F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		648CC2C81B5CF5BB0020D5F1 /* Cute_FileUploadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cute_FileUploadTests.m; sourceTree = "<group>"; };
+		648CC2D61B5CF7940020D5F1 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
+		648CC2DC1B5CF89D0020D5F1 /* CuteHttpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteHttpServer.h; sourceTree = "<group>"; };
+		648CC2DD1B5CF89D0020D5F1 /* CuteHttpServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteHttpServer.m; sourceTree = "<group>"; };
+		648CC2DF1B5CF8B40020D5F1 /* CuteHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteHttpClient.h; sourceTree = "<group>"; };
+		648CC2E01B5CF8B40020D5F1 /* CuteHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteHttpClient.m; sourceTree = "<group>"; };
+		648CC2E21B5CFBEF0020D5F1 /* ZWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseViewController.h; sourceTree = "<group>"; };
+		648CC2E31B5CFBEF0020D5F1 /* ZWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseViewController.m; sourceTree = "<group>"; };
+		648CC31F1B5D009B0020D5F1 /* CuteHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteHttpResponse.h; sourceTree = "<group>"; };
+		648CC3201B5D009B0020D5F1 /* CuteHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteHttpResponse.m; sourceTree = "<group>"; };
+		648CC3221B5D136F0020D5F1 /* CuteHttpMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteHttpMessage.h; sourceTree = "<group>"; };
+		648CC3231B5D136F0020D5F1 /* CuteHttpMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteHttpMessage.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		648CC2A61B5CF5BB0020D5F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648CC2BF1B5CF5BB0020D5F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		648CC2A01B5CF5BB0020D5F1 = {
+			isa = PBXGroup;
+			children = (
+				648CC2AB1B5CF5BB0020D5F1 /* Cute-FileUpload */,
+				648CC2C51B5CF5BB0020D5F1 /* Cute-FileUploadTests */,
+				648CC2AA1B5CF5BB0020D5F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		648CC2AA1B5CF5BB0020D5F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2A91B5CF5BB0020D5F1 /* Cute-FileUpload.app */,
+				648CC2C21B5CF5BB0020D5F1 /* Cute-FileUploadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		648CC2AB1B5CF5BB0020D5F1 /* Cute-FileUpload */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2D41B5CF7030020D5F1 /* Controllers */,
+				648CC2DB1B5CF8770020D5F1 /* CuteHttpServer */,
+				648CC2DA1B5CF7F20020D5F1 /* Libraries */,
+				648CC2D51B5CF7440020D5F1 /* Resources */,
+				648CC2D21B5CF7030020D5F1 /* Models */,
+				648CC2D31B5CF7030020D5F1 /* Views */,
+				648CC2B01B5CF5BB0020D5F1 /* AppDelegate.h */,
+				648CC2B11B5CF5BB0020D5F1 /* AppDelegate.m */,
+				648CC2B91B5CF5BB0020D5F1 /* Images.xcassets */,
+				648CC2BB1B5CF5BB0020D5F1 /* LaunchScreen.xib */,
+				648CC2AC1B5CF5BB0020D5F1 /* Supporting Files */,
+			);
+			path = "Cute-FileUpload";
+			sourceTree = "<group>";
+		};
+		648CC2AC1B5CF5BB0020D5F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2AD1B5CF5BB0020D5F1 /* Info.plist */,
+				648CC2AE1B5CF5BB0020D5F1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		648CC2C51B5CF5BB0020D5F1 /* Cute-FileUploadTests */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2C81B5CF5BB0020D5F1 /* Cute_FileUploadTests.m */,
+				648CC2C61B5CF5BB0020D5F1 /* Supporting Files */,
+			);
+			path = "Cute-FileUploadTests";
+			sourceTree = "<group>";
+		};
+		648CC2C61B5CF5BB0020D5F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2C71B5CF5BB0020D5F1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		648CC2D21B5CF7030020D5F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		648CC2D31B5CF7030020D5F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		648CC2D41B5CF7030020D5F1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2E21B5CFBEF0020D5F1 /* ZWBaseViewController.h */,
+				648CC2E31B5CFBEF0020D5F1 /* ZWBaseViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		648CC2D51B5CF7440020D5F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2D61B5CF7940020D5F1 /* web */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		648CC2DA1B5CF7F20020D5F1 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		648CC2DB1B5CF8770020D5F1 /* CuteHttpServer */ = {
+			isa = PBXGroup;
+			children = (
+				648CC2DC1B5CF89D0020D5F1 /* CuteHttpServer.h */,
+				648CC2DD1B5CF89D0020D5F1 /* CuteHttpServer.m */,
+				648CC2DF1B5CF8B40020D5F1 /* CuteHttpClient.h */,
+				648CC2E01B5CF8B40020D5F1 /* CuteHttpClient.m */,
+				648CC31F1B5D009B0020D5F1 /* CuteHttpResponse.h */,
+				648CC3201B5D009B0020D5F1 /* CuteHttpResponse.m */,
+				648CC3221B5D136F0020D5F1 /* CuteHttpMessage.h */,
+				648CC3231B5D136F0020D5F1 /* CuteHttpMessage.m */,
+			);
+			path = CuteHttpServer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		648CC2A81B5CF5BB0020D5F1 /* Cute-FileUpload */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 648CC2CC1B5CF5BB0020D5F1 /* Build configuration list for PBXNativeTarget "Cute-FileUpload" */;
+			buildPhases = (
+				648CC2A51B5CF5BB0020D5F1 /* Sources */,
+				648CC2A61B5CF5BB0020D5F1 /* Frameworks */,
+				648CC2A71B5CF5BB0020D5F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cute-FileUpload";
+			productName = "Cute-FileUpload";
+			productReference = 648CC2A91B5CF5BB0020D5F1 /* Cute-FileUpload.app */;
+			productType = "com.apple.product-type.application";
+		};
+		648CC2C11B5CF5BB0020D5F1 /* Cute-FileUploadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 648CC2CF1B5CF5BB0020D5F1 /* Build configuration list for PBXNativeTarget "Cute-FileUploadTests" */;
+			buildPhases = (
+				648CC2BE1B5CF5BB0020D5F1 /* Sources */,
+				648CC2BF1B5CF5BB0020D5F1 /* Frameworks */,
+				648CC2C01B5CF5BB0020D5F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				648CC2C41B5CF5BB0020D5F1 /* PBXTargetDependency */,
+			);
+			name = "Cute-FileUploadTests";
+			productName = "Cute-FileUploadTests";
+			productReference = 648CC2C21B5CF5BB0020D5F1 /* Cute-FileUploadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		648CC2A11B5CF5BB0020D5F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = qinzhiwei;
+				TargetAttributes = {
+					648CC2A81B5CF5BB0020D5F1 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					648CC2C11B5CF5BB0020D5F1 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 648CC2A81B5CF5BB0020D5F1;
+					};
+				};
+			};
+			buildConfigurationList = 648CC2A41B5CF5BB0020D5F1 /* Build configuration list for PBXProject "Cute-FileUpload" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 648CC2A01B5CF5BB0020D5F1;
+			productRefGroup = 648CC2AA1B5CF5BB0020D5F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				648CC2A81B5CF5BB0020D5F1 /* Cute-FileUpload */,
+				648CC2C11B5CF5BB0020D5F1 /* Cute-FileUploadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		648CC2A71B5CF5BB0020D5F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648CC2D71B5CF7940020D5F1 /* web in Resources */,
+				648CC2BD1B5CF5BB0020D5F1 /* LaunchScreen.xib in Resources */,
+				648CC2BA1B5CF5BB0020D5F1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648CC2C01B5CF5BB0020D5F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		648CC2A51B5CF5BB0020D5F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648CC2B21B5CF5BB0020D5F1 /* AppDelegate.m in Sources */,
+				648CC2E41B5CFBEF0020D5F1 /* ZWBaseViewController.m in Sources */,
+				648CC2AF1B5CF5BB0020D5F1 /* main.m in Sources */,
+				648CC2DE1B5CF89D0020D5F1 /* CuteHttpServer.m in Sources */,
+				648CC3241B5D136F0020D5F1 /* CuteHttpMessage.m in Sources */,
+				648CC2E11B5CF8B40020D5F1 /* CuteHttpClient.m in Sources */,
+				648CC3211B5D009B0020D5F1 /* CuteHttpResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648CC2BE1B5CF5BB0020D5F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648CC2C91B5CF5BB0020D5F1 /* Cute_FileUploadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		648CC2C41B5CF5BB0020D5F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 648CC2A81B5CF5BB0020D5F1 /* Cute-FileUpload */;
+			targetProxy = 648CC2C31B5CF5BB0020D5F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		648CC2BB1B5CF5BB0020D5F1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				648CC2BC1B5CF5BB0020D5F1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		648CC2CA1B5CF5BB0020D5F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		648CC2CB1B5CF5BB0020D5F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		648CC2CD1B5CF5BB0020D5F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cute-FileUpload/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		648CC2CE1B5CF5BB0020D5F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cute-FileUpload/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		648CC2D01B5CF5BB0020D5F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Cute-FileUploadTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cute-FileUpload.app/Cute-FileUpload";
+			};
+			name = Debug;
+		};
+		648CC2D11B5CF5BB0020D5F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Cute-FileUploadTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cute-FileUpload.app/Cute-FileUpload";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		648CC2A41B5CF5BB0020D5F1 /* Build configuration list for PBXProject "Cute-FileUpload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648CC2CA1B5CF5BB0020D5F1 /* Debug */,
+				648CC2CB1B5CF5BB0020D5F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		648CC2CC1B5CF5BB0020D5F1 /* Build configuration list for PBXNativeTarget "Cute-FileUpload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648CC2CD1B5CF5BB0020D5F1 /* Debug */,
+				648CC2CE1B5CF5BB0020D5F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		648CC2CF1B5CF5BB0020D5F1 /* Build configuration list for PBXNativeTarget "Cute-FileUploadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648CC2D01B5CF5BB0020D5F1 /* Debug */,
+				648CC2D11B5CF5BB0020D5F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 648CC2A11B5CF5BB0020D5F1 /* Project object */;
+}
