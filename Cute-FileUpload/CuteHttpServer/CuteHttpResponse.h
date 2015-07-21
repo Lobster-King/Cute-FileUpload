@@ -10,6 +10,6 @@
 
 @interface CuteHttpResponse : NSObject
 
-+ (NSData *)responseHttpMessageBody;
+- (void)handleResponseWithWriteStream:(NSOutputStream *)outputStream receiveData:(NSData *)data;
 
 @end

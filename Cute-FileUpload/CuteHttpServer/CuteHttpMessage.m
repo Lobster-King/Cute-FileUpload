@@ -11,6 +11,7 @@
 @interface CuteHttpMessage ()
 {
     NSMutableString * httpMessage;
+    CFHTTPMessageRef  requestMessage;
 }
 @end
 
@@ -20,6 +21,7 @@
     self = [super init];
     if (self) {
         httpMessage = [[NSMutableString alloc]initWithString:@"HTTP/1.1 200 OK\nServer: ZWServer"];
+        requestMessage = CFHTTPMessageCreateEmpty(NULL, YES);
     }
     return self;
 }
@@ -77,5 +79,29 @@
 //- (void)dealloc{
 //    CFRelease(httpMessage);
 //}
+
+- (void)appendBytes:(NSData *)data{
+    
+    CFHTTPMessageAppendBytes(requestMessage, [data bytes], [data length]);
+    
+}
+
+- (NSURL *)requestUrl{
+    
+    return (__bridge NSURL *)(CFHTTPMessageCopyRequestURL(requestMessage));
+    
+}
+
+@end
+
+
+@implementation CuteHttpRequestMessage
+
+
+@end
+
+
+@implementation CuteHttpResponseMessage
+
 
 @end
