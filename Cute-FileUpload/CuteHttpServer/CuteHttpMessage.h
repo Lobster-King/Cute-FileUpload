@@ -16,18 +16,6 @@
 
 - (void)appendBytes:(NSData *)data;
 
-- (NSURL *)requestUrl;
-
-@end
-
-@interface CuteHttpRequestMessage : CuteHttpMessage
-
-
-@end
-
-@interface CuteHttpResponseMessage : CuteHttpMessage
-
-
 
 @end
 

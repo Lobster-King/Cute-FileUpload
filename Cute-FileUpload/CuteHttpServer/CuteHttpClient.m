@@ -8,6 +8,7 @@
 
 #import "CuteHttpClient.h"
 #import "CuteHttpMessage.h"
+#import "CuteHttpResponse.h"
 
 #define READ_BUFFER     2048
 #define WRITE_BUFFER    1024
@@ -68,42 +69,6 @@
         }
         case NSStreamEventHasSpaceAvailable:
         {
-            //response data
-            if (stream == self.outputStream) {
-                
-                //                //                NSString *responseString = @"HTTP/1.1 200 OK\nServer: ZWServer\nAccess-Control-Allow-Origin:*\nConnection: close\nContent-Length: 8\nContent-Type: text/html; charset=utf-8\n\nresponse";
-                //
-                //                NSString *filePath = [[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"web"] stringByDeletingLastPathComponent];
-                //                filePath = [filePath stringByAppendingString:@"/index.html"];
-                //
-                //                NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
-                //
-                //                NSInteger fileLength = (UInt64)[[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue];
-                //
-                //                NSData *data = [NSData dataWithContentsOfFile:filePath];
-                //
-                //
-                ////                HTTPMessage *http = [[HTTPMessage alloc]initResponseWithStatusCode:200 description:@"HTTP" version:@"1.1"];
-                ////                [http setHeaderField:@"Content-Length" value:[NSString stringWithFormat:@"%ld",fileLength]];
-                ////                [http setHeaderField:@"Content-Type" value:@"text/html; charset=utf-8"];
-                ////                [http setHeaderField:@"Connection" value:@"close"];
-                //
-                //                CuteHttpMessage *httpMessage = [[CuteHttpMessage alloc]init];
-                //
-                //                [httpMessage appendHeaderField:@"Content-Length" headerValue:[NSString stringWithFormat:@"%ld",fileLength]];
-                //
-                //                // wirite http header
-                //                [self writeData:[httpMessage httpHeaderMessageData]];
-                //
-                //                // write http body
-                //                [self writeData:data];
-                //                //                if (6 == length) {
-                //                [self.outputStream close];
-                //                [self.delegate zwClientHandleComplete:self];
-                //                }
-                
-            }
-            
             break;
         }
         case NSStreamEventHasBytesAvailable:
@@ -117,43 +82,8 @@
                     
                     //handle recived data
                     
-                    CuteHttpMessage *requestMessage = [[CuteHttpMessage alloc]init];
-                    [requestMessage appendBytes:data];
-                    NSURL *url = [requestMessage requestUrl];
-                    
-                    NSString *filePath = [[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"web"] stringByDeletingLastPathComponent];
-                    
-                    NSLog(@"url++++++++++++++++%@",[url relativeString]);
-                    if ([[url relativeString] isEqualToString:@"/"]) {
-                        
-                        filePath = [filePath stringByAppendingString:@"/index.html"];
-                        
-                    }else{
-                        
-                        filePath = [filePath stringByAppendingString:[url relativeString]];
-                    }
-                    
-                    NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
-                    
-                    NSInteger fileLength = (UInt64)[[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue];
-                    
-                    
-                    CuteHttpMessage *httpMessage = [[CuteHttpMessage alloc]init];
-                    
-                    [httpMessage appendHeaderField:@"Content-Length" headerValue:[NSString stringWithFormat:@"%ld",fileLength]];
-                    
-                    // wirite http header
-                    [self writeData:[httpMessage httpHeaderMessageData]];
-                    
-                    NSData *data = [NSData dataWithContentsOfFile:filePath];
-                    
-                    [self writeData:data];
-                    
-//                    if ([data length] == length) {
-//                        
-//                        [self.outputStream close];
-//                        
-//                    }
+                    CuteHttpResponse *response = [[CuteHttpResponse alloc]init];
+                    [response handleResponseWithWriteStream:self.outputStream receiveData:data];
                     
                 }
             }
@@ -176,18 +106,6 @@
         default:
             break;
     }
-}
-
-- (NSDictionary *)getParametersDictionaryWithParams:(NSString *)params {
-    NSString * urlEncodedJsonString = [[params componentsSeparatedByString:@"="] lastObject];
-    NSString *jsonString = [urlEncodedJsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    NSData * jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSError * thisError = nil;
-    NSDictionary * paramsDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&thisError];
-    
-    return paramsDic;
 }
 
 - (NSData *)receiveData{
@@ -220,32 +138,6 @@
     
     return retBlob;
     
-}
-
-- (NSUInteger)writeData:(NSData *)outData{
-    
-    NSUInteger offset           = 0;
-    NSUInteger bytesWritten     = 0;
-    NSUInteger remainingLength  = [outData length];
-    NSUInteger bufferSize = MIN(WRITE_BUFFER, remainingLength);
-    
-    void *bytes = malloc(bufferSize * sizeof(void*));
-    while (remainingLength > 0) {
-        NSRange range = NSMakeRange(offset, bufferSize);
-        [outData getBytes:bytes range: range];
-        
-        bytesWritten = [self.outputStream write:bytes maxLength:bufferSize];
-        if(bytesWritten == -1){
-            break;
-        }
-        remainingLength -= bytesWritten;
-        offset += bytesWritten;
-        bufferSize = MIN(WRITE_BUFFER, remainingLength);
-    }
-    
-    free(bytes);
-    
-    return bytesWritten;
 }
 
 - (void)stopStreamService{

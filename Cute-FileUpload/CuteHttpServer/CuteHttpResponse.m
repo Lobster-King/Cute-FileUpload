@@ -37,9 +37,9 @@
     
     self.outputStream = outputStream;
     
-    CFHTTPMessageAppendBytes(httpRequestMessage, [data bytes], [data length]);
-    NSURL *url = (__bridge NSURL *)(CFHTTPMessageCopyRequestURL(httpRequestMessage));
-    NSString *relativeString = [url relativeString];
+    // we should resolve the http header
+    
+    NSString *relativeString = [self resolveHttpHeader:data];
     
     NSString *filePath = [[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"web"] stringByDeletingLastPathComponent];
     
@@ -49,7 +49,7 @@
         
     }else{
         
-        filePath = [filePath stringByAppendingString:[url relativeString]];
+        filePath = [filePath stringByAppendingString:relativeString];
     }
     
     NSData *responseData = [NSData dataWithContentsOfFile:filePath];
@@ -57,17 +57,21 @@
     NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
     
     NSInteger fileLength = (UInt64)[[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue];
-    CFHTTPMessageSetHeaderFieldValue(
-                                     httpResponseMessage, (CFStringRef)@"Connection", (CFStringRef)@"close");
-    CFHTTPMessageSetHeaderFieldValue(
-                                     httpResponseMessage,
-                                     (CFStringRef)@"Content-Length",
-                                     (__bridge CFStringRef)[NSString stringWithFormat:@"%ld", fileLength]);
-    CFDataRef headerData = CFHTTPMessageCopySerializedMessage(httpResponseMessage);
+//    CFHTTPMessageSetHeaderFieldValue(
+//                                     httpResponseMessage, (CFStringRef)@"Connection", (CFStringRef)@"close");
+//    CFHTTPMessageSetHeaderFieldValue(
+//                                     httpResponseMessage,
+//                                     (CFStringRef)@"Content-Length",
+//                                     (__bridge CFStringRef)[NSString stringWithFormat:@"%ld", fileLength]);
+//    CFDataRef headerData = CFHTTPMessageCopySerializedMessage(httpResponseMessage);
+    CuteHttpMessage *httpMessage = [[CuteHttpMessage alloc]init];
     
-    [self writeData:(__bridge NSData *)(headerData)];
+    [httpMessage appendHeaderField:@"Content-Length" headerValue:[NSString stringWithFormat:@"%ld",fileLength]];
+    
+    // write http header
+    [self writeData:[httpMessage httpHeaderMessageData]];
+    // write http body
     [self writeData:responseData];
-    
 }
 
 - (NSUInteger)writeData:(NSData *)outData{
@@ -96,10 +100,18 @@
     return bytesWritten;
 }
 
+- (NSString *)resolveHttpHeader:(NSData *)data{
+    CFHTTPMessageAppendBytes(httpRequestMessage, [data bytes], [data length]);
+    NSURL *url = (__bridge NSURL *)(CFHTTPMessageCopyRequestURL(httpRequestMessage));
+    NSString *relativeString = [url relativeString];
+    return relativeString;
+}
+
 - (void)dealloc{
     
     CFRelease(httpRequestMessage);
     CFRelease(httpResponseMessage);
+    self.outputStream = nil;
     NSLog(@"%s",__func__);
     
 }
